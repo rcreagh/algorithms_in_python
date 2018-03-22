@@ -15,6 +15,7 @@ class StackTest(unittest.TestCase):
     self.assertRaises(stack.PopFromEmptyStackException, stack_a.pop)
 
   def testStack(self):
+    """ Tests that basic operations of the stack are working fine."""
     stack_a = stack.Stack()
     stack_a.push(1)
     stack_a.push(2)
@@ -24,6 +25,8 @@ class StackTest(unittest.TestCase):
     print(stack_a)
     self.assertEqual(item_removed, 3)
     self.assertEqual(stack_a.stack, [1, 2, 4])
+    self.assertEqual(stack_a.size(), 3)
+    self.assertFalse(stack_a.isEmpty())
 
 if __name__ == '__main__':
   unittest.main()
