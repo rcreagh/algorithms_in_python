@@ -8,10 +8,10 @@ import unittest
 class StackTest(unittest.TestCase):
 
   def testEmptyStack(self):
-    """Tests that isEmpty() returns True when stack is empty, and that you
+    """Tests that is_empty() returns True when stack is empty, and that you
     cannot pop() from an empty stack."""
     stack_a = stack.Stack()
-    self.assertTrue(stack_a.isEmpty())
+    self.assertTrue(stack_a.is_empty())
     self.assertRaises(stack.PopFromEmptyStackException, stack_a.pop)
 
   def testStack(self):
@@ -26,7 +26,7 @@ class StackTest(unittest.TestCase):
     self.assertEqual(item_removed, 3)
     self.assertEqual(stack_a.stack, [1, 2, 4])
     self.assertEqual(stack_a.size(), 3)
-    self.assertFalse(stack_a.isEmpty())
+    self.assertFalse(stack_a.is_empty())
 
 if __name__ == '__main__':
   unittest.main()

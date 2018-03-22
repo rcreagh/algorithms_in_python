@@ -9,7 +9,7 @@ class QueueTest(unittest.TestCase):
 
   def testEmptyQueue(self):
     queue_a = queue.Queue()
-    self.assertTrue(queue_a.isEmpty())
+    self.assertTrue(queue_a.is_empty())
     self.assertRaises(queue.DequeueEmptyQueue, queue_a.dequeue)
 
   def testQueue(self):
@@ -21,7 +21,7 @@ class QueueTest(unittest.TestCase):
     queue_a.enqueue(4)
     self.assertEqual(item_removed, 1)
     self.assertEqual(queue_a.size(), 3)
-    self.assertFalse(queue_a.isEmpty())
+    self.assertFalse(queue_a.is_empty())
     self.assertEqual(queue_a.first.item, 2)
     self.assertEqual(queue_a.first.next.item, 3)
     self.assertEqual(queue_a.last.item, 4)

@@ -1,6 +1,7 @@
 #! /usr/bin/python3
 
-"""This script implements a queue as per Sedgewick's 'Algorithms'."""
+"""This script implements a queue based on a linked list, as per Sedgewick's
+'Algorithms'."""
 
 class DequeueEmptyQueue(Exception):
   pass
@@ -17,7 +18,7 @@ class Queue:
     self.first = None
     self.last = None
 
-  def isEmpty(self):
+  def is_empty(self):
     return self.n == 0
 
   def size(self):
@@ -26,7 +27,7 @@ class Queue:
   def enqueue(self, item):
     old_last = self.last
     self.last = Queue.Node(item, None)
-    if self.isEmpty():
+    if self.is_empty():
       self.first = self.last
     else:
       old_last.next = self.last
@@ -38,6 +39,6 @@ class Queue:
     item = self.first.item
     self.first = self.first.next
     self.n -= 1
-    if self.isEmpty():
+    if self.is_empty():
       self.last = None
     return item

@@ -17,7 +17,7 @@ class Stack:
   def __str__(self):
     return str(list(self.__iter__()))
 
-  def isEmpty(self):
+  def is_empty(self):
     return self.n == 0
 
   def size(self):
