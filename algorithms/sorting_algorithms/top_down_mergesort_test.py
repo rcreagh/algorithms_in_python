@@ -5,7 +5,7 @@
 import top_down_mergesort
 import unittest
 
-class shellSortTest(unittest.TestCase):
+class topDownMergeSortTest(unittest.TestCase):
 
   def testTdMergeSortInts(self):
     list_ints = [4, 2, 1, 9, 3, 7, 5, 6]
